@@ -516,6 +516,7 @@ exports.Formats = [
 	{
 		name: "Season's Greetings",
 		section: "Seasonals",
+		searchShow: false,
 
 		effectType: 'Format',
 		team: 'randomSeasonal',
@@ -524,6 +525,7 @@ exports.Formats = [
 	{
 		name: "Winter Wonderland",
 		section: "Seasonals",
+		searchShow: false,
 
 		effectType: 'Format',
 		team: 'randomSeasonalWW',
@@ -642,6 +644,7 @@ exports.Formats = [
 	{
 		name: "Valentine Venture",
 		section: "Seasonals",
+		searchShow: false,
 
 		team: 'randomSeasonalVV',
 		gameType: 'Doubles',
@@ -650,6 +653,7 @@ exports.Formats = [
 	{
 		name: "Spring Forward",
 		section: "Seasonals",
+		searchShow: false,
 
 		team: 'randomSeasonalSF',
 		onBegin: function() {
@@ -725,6 +729,7 @@ exports.Formats = [
 	{
 		name: "Fools Festival",
 		section: "Seasonals",
+		searchShow: false,
 
 		team: 'randomSeasonalFF',
 		onBegin: function() {
@@ -918,6 +923,7 @@ exports.Formats = [
 	{
 		name: "May Mayhem",
 		section: "Seasonals",
+		searchShow: false,
 
 		team: 'randomSeasonalMM',
 		onBegin: function() {
@@ -941,6 +947,7 @@ exports.Formats = [
 	{
 		name: "June Jubilee",
 		section: "Seasonals",
+		searchShow: false,
 
 		team: 'randomSeasonalJJ',
 		turn: 0,
@@ -1006,6 +1013,7 @@ exports.Formats = [
 	{
 		name: "Jolly July",
 		section: "Seasonals",
+		searchShow: false,
 
 		team: 'randomSeasonalJuly',
 		onBegin: function() {

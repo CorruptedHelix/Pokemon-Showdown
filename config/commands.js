@@ -813,6 +813,42 @@ var commands = exports.commands = {
 			matched = true;
 			buffer += '- <a href="http://www.smogon.com/bw/metagames/doubles">Doubles</a><br />';
 		}
+		if (target === 'all' || target === '6movebattling') {
+			matched = true;
+			buffer += '- <a href="http://www.smogon.com/forums/threads/six-move-battling.3470224/">6 Move Battling</a><br />';
+		}
+		if (target === 'all' || target === 'abilityexchange') {
+			matched = true;
+			buffer += '- <a href="http://www.smogon.com/forums/threads/ability-exchange-ae.3485741/">Ability Exchange</a><br />';
+		}
+		if (target === 'all' || target === 'colorchangemeta') {
+			matched = true;
+			buffer += '- <a href="http://www.smogon.com/forums/threads/the-color-change-metagame.3483881/">Color Change Meta</a><br />';
+		}
+		if (target === 'all' || target === 'gsc modern') {
+			matched = true;
+			buffer += '- <a href="http://smogon.com/forums/threads/gsc-modern.3481278/">GSC Modern</a><br />';
+		}
+		if (target === 'all' || target === 'lcuu') {
+			matched = true;
+			buffer += '- <a href="http://smogon.com/forums/threads/lc-uu-uu-in-lc-eviolite-and-lickitung-are-now-ban.3479562/">LC UU</a><br />';
+		}
+		if (target === 'all' || target === 'negativemetagame') {
+			matched = true;
+			buffer += '- <a href="http://smogon.com/forums/threads/the-negative-metagame.3483195/">Negative Metagame</a><br />';
+		}
+		if (target === 'all' || target === 'offstatmetagame') {
+			matched = true;
+			buffer += '- <a href="http://www.smogon.com/forums/threads/offstat-metagame.3474480/">Offstat Metagame</a><br />';
+		}
+		if (target === 'all' || target === 'skybattles') {
+			matched = true;
+			buffer += '- <a href="http://smogon.com/forums/threads/sky-battles-kacaw.3484839/">Sky Battles</a><br />';
+		}
+		if (target === 'all' || target === 'slowmons') {
+			matched = true;
+			buffer += '- <a href="http://smogon.com/forums/threads/slowmons-macho-macho-man.3483381/">Slowmons</a><br />';
+		)
 		if (!matched) {
 			return this.sendReply('The Tiers entry "'+target+'" was not found. Try /tiers for general help.');
 		}

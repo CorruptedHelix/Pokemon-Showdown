@@ -377,14 +377,6 @@ exports.Formats = [
 		banlist: ['Mewtwo', 'Lugia', 'Ho-Oh', 'Venusaur', 'Drizzle ++ Swift Swim']
 	},
 	{
-		name: "Joimmons",
-		section: "Other Metagames",
-
-		mod: 'joimmons',
-		ruleset: ['CAP Pokemon', 'Team Preview', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Moody Clause', 'Evasion Moves Clause', 'HP Percentage Mod'],
-		banlist: ['Uber', 'Soul Dew']
-	},
-	{
 		name: "Monotype (OU)",
 		section: "Other Metagames",
 

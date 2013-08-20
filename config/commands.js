@@ -81,7 +81,7 @@
  *   user.can() if you don't want that message.
  *
  *   Should usually be near the top of the command, like:
- *     if (!this.can('potd')) return false;
+ *     if (!this.can('potm')) return false;
  *
  * this.canBroadcast()
  *   Signifies that a message can be broadcast, as long as the user
@@ -754,7 +754,7 @@ var commands = exports.commands = {
 	rules: function(target, room, user) {
 		if (!this.canBroadcast()) return;
 		this.sendReplyBox('Please follow the rules:<br />' +
-			'- <a href="http://pokemonshowdown.com/rules">Rules</a><br />' +
+			'- <a href="http://www.pokesun.com/t-Sticky-Pok%C3%A9Sun-League-Showdown-Rules">Rules</a><br />' +
 			'</div>');
 	},
 
@@ -765,27 +765,7 @@ var commands = exports.commands = {
 		var matched = false;
 		if (!target || target === 'all') {
 			matched = true;
-			buffer += '<a href="http://www.smogon.com/sim/faq">Frequently Asked Questions</a><br />';
-		}
-		if (target === 'all' || target === 'deviation') {
-			matched = true;
-			buffer += '<a href="http://www.smogon.com/sim/faq#deviation">Why did this user gain or lose so many points?</a><br />';
-		}
-		if (target === 'all' || target === 'doubles' || target === 'triples' || target === 'rotation') {
-			matched = true;
-			buffer += '<a href="http://www.smogon.com/sim/faq#doubles">Can I play doubles/triples/rotation battles here?</a><br />';
-		}
-		if (target === 'all' || target === 'randomcap') {
-			matched = true;
-			buffer += '<a href="http://www.smogon.com/sim/faq#randomcap">What is this fakemon and what is it doing in my random battle?</a><br />';
-		}
-		if (target === 'all' || target === 'restarts') {
-			matched = true;
-			buffer += '<a href="http://www.smogon.com/sim/faq#restarts">Why is the server restarting?</a><br />';
-		}
-		if (target === 'all' || target === 'staff') {
-			matched = true;
-			buffer += '<a href="http://www.smogon.com/sim/staff_faq">Staff FAQ</a><br />';
+			buffer += '<a href="http://www.pokesun.com/t-Sticky-Showdown-Frequently-Asked-Questions">Frequently Asked Questions, PokeSun style</a><br />';
 		}
 		if (!matched) {
 			return this.sendReply('The FAQ entry "'+target+'" was not found. Try /faq for general help.');
@@ -946,16 +926,16 @@ var commands = exports.commands = {
 		this.sendReply("It's not funny anymore.");
 	},
 
-	potd: function(target, room, user) {
-		if (!this.can('potd')) return false;
+	potm: function(target, room, user) {
+		if (!this.can('potm')) return false;
 
-		config.potd = target;
-		Simulator.SimulatorProcess.eval('config.potd = \''+toId(target)+'\'');
+		config.potm = target;
+		Simulator.SimulatorProcess.eval('config.potm = \''+toId(target)+'\'');
 		if (target) {
-			if (Rooms.lobby) Rooms.lobby.addRaw('<div class="broadcast-blue"><b>The Pokemon of the Day is now '+target+'!</b><br />This Pokemon will be guaranteed to show up in random battles.</div>');
+			if (Rooms.lobby) Rooms.lobby.addRaw('<div class="broadcast-blue"><b>The Pokemon of the Month is now '+target+'!</b><br />This Pokemon will be guaranteed to show up in random battles.</div>');
 			this.logModCommand('The Pokemon of the Day was changed to '+target+' by '+user.name+'.');
 		} else {
-			if (Rooms.lobby) Rooms.lobby.addRaw('<div class="broadcast-blue"><b>The Pokemon of the Day was removed!</b><br />No pokemon will be guaranteed in random battles.</div>');
+			if (Rooms.lobby) Rooms.lobby.addRaw('<div class="broadcast-blue"><b>The Pokemon of the Month was removed!</b><br />No pokemon will be guaranteed in random battles.</div>');
 			this.logModCommand('The Pokemon of the Day was removed by '+user.name+'.');
 		}
 	},
@@ -1211,9 +1191,9 @@ var commands = exports.commands = {
 			matched = true;
 			this.sendReply('/declare [message] - Anonymously announces a message. Requires: & ~');
 		}
-		if (target === '&' || target === 'potd' ) {
+		if (target === '&' || target === 'potm' ) {
 			matched = true;
-			this.sendReply('/potd [pokemon] - Sets the Random Battle Pokemon of the Day. Requires: & ~');
+			this.sendReply('/potm [pokemon] - Sets the Random Battle Pokemon of the Month. Requires: & ~');
 		}
 		if (target === '%' || target === 'announce' || target === 'wall' ) {
 			matched = true;

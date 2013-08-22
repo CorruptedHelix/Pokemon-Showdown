@@ -1,4 +1,8 @@
-/config/*
+/config/avatars
+/config/chatrooms.json
+/config/config.js
+/config/custom.css
+/config/usergroups.csv
 /logs/*
 /node_modules
 npm-debug.log

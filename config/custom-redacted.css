@@ -1,3 +1,17 @@
+/**
+ * Custom backgrounds
+ *
+*This file is for the purpose of showing people how to change
+*the background of their server,and don't know how to do CSS. 
+*The code, simply, creates a tiling background. If your image
+*is smaller than 1289x967 then the image will tile (1289x967 
+*is the size of the background on the official Showdown server).
+*To change the image, change the URL already there to the URL of 
+*the image you wish to set as the background. To change the background
+*color (generally not seen), change the hex code #d37519 to the hex code
+*of another color.
+ */
+
 body {
  
 color: white;

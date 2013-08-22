@@ -1,0 +1,11 @@
+body {
+ 
+color: white;
+font-size: 11pt;
+font-family: Verdana,Helvetica,Arial,sans-serif;
+background: #d37519 url(http://www.pokesun.com/images/pokesun-theme/body_bg.png);
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}

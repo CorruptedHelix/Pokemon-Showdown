@@ -4,3 +4,8 @@
 96.48.195.30
 74.215.20.156
 68.144.221.250
+
+#Anything paste these comments are banned IPs. Comments will be listed a line above, like so;
+#
+## (banned person's name), (reason)
+#(ip)

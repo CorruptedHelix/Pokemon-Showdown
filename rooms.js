@@ -10,7 +10,7 @@
  */
 
 const TIMEOUT_DEALLOCATE = 15*60*1000;
-const REPORT_USER_STATS_INTERVAL = 1000*60*10;
+const REPORT_USER_STATS_INTERVAL = 1000*60*5;
 
 var modlog = modlog || fs.createWriteStream('logs/modlog.txt', {flags:'a+'});
 
@@ -490,6 +490,7 @@ var GlobalRoom = (function() {
 		if (config.reportbattles && rooms.lobby) {
 			rooms.lobby.add('|b|'+newRoom.id+'|'+p1.getIdentity()+'|'+p2.getIdentity());
 		}
+		return newRoom;
 	};
 	GlobalRoom.prototype.addRoom = function(room, format, p1, p2, parent, rated) {
 		room = newRoom(room, format, p1, p2, parent, rated);
@@ -694,6 +695,7 @@ var BattleRoom = (function() {
 				logs[0].push(line);
 				logs[1].push(line);
 				logs[2].push(line);
+				if (line === "|callback|decision" && !this.active) this.active = true; // Hack
 			}
 		}
 		var roomid = this.id;
@@ -1145,8 +1147,8 @@ var ChatRoom = (function() {
 		this.logFile = null;
 		this.logFilename = '';
 		this.destroyingLog = false;
-		this.bannedUsers = {};
-		this.bannedIps = {};
+		this.isLelEnforce = false;
+		this.isGTEnforce = false;
 
 		// `config.loglobby` is a legacy name
 		if (config.logchat || config.loglobby) {
@@ -1309,6 +1311,8 @@ var ChatRoom = (function() {
 	ChatRoom.prototype.onJoinConnection = function(user, connection) {
 		var userList = this.userList ? this.userList : this.getUserList();
 		this.send('|init|chat\n|title|'+this.title+'\n'+userList+'\n'+this.log.slice(-25).join('\n'), connection);
+		if (global.Tournaments && Tournaments.getTournament(this.id))
+			Tournaments.getTournament(this.id).update(user);
 	};
 	ChatRoom.prototype.onJoin = function(user, connection, merging) {
 		if (!user) return false; // ???
@@ -1331,6 +1335,8 @@ var ChatRoom = (function() {
 		if (!merging) {
 			var userList = this.userList ? this.userList : this.getUserList();
 			this.send('|init|chat\n|title|'+this.title+'\n'+userList+'\n'+this.log.slice(-100).join('\n'), connection);
+			if (global.Tournaments && Tournaments.getTournament(this.id))
+				Tournaments.getTournament(this.id).update(user);
 		}
 
 		return user;

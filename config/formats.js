@@ -16,6 +16,7 @@ exports.Formats = [
 	{
 		name: "Unrated Random Battle",
 		section: "Singles",
+		searchShow: false,
 
 		team: 'random',
 		challengeShow: false,
@@ -83,6 +84,7 @@ exports.Formats = [
 	{
 		name: "CAP",
 		section: "Singles",
+		searchShow: false,
 
 		ruleset: ['CAP Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview'],
 		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Soul Dew']
@@ -196,6 +198,7 @@ exports.Formats = [
 	{
 		name: "Hackmons",
 		section: "Other Metagames",
+		searchShow: false,
 
 		ruleset: ['Pokemon'],
 		banlist: []
@@ -203,6 +206,7 @@ exports.Formats = [
 	{
 		name: "Balanced Hackmons",
 		section: "Other Metagames",
+		searchShow: false,
 
 		ruleset: ['Pokemon', 'OHKO Clause'],
 		banlist: ['Wonder Guard', 'Pure Power', 'Huge Power', 'Shadow Tag', 'Arena Trap']
@@ -210,6 +214,7 @@ exports.Formats = [
 	{
 		name: "Gen-NEXT OU",
 		section: "Other Metagames",
+		searchShow: false,
 
 		mod: 'gennext',
 		searchShow: false,
@@ -226,6 +231,7 @@ exports.Formats = [
 	{
 		name: "Glitchmons",
 		section: "Other Metagames",
+		searchShow: false,
 
 		searchShow: false,
 		ruleset: ['Pokemon', 'Team Preview', 'HP Percentage Mod'],
@@ -377,6 +383,17 @@ exports.Formats = [
 		banlist: ['Mewtwo', 'Lugia', 'Ho-Oh', 'Venusaur', 'Drizzle ++ Swift Swim']
 	},
 	{
+		name: "Mixedmons",
+		section: "Other Metagames",
+
+		ruleset: ['Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview', 'Ability Exchange Pokemon', 'Sleep Clause Mod', 'Species Clause Mod', 'OHKO Clause', 'Moody Clause', 'Evasion Moves Clause', 'HP Percentage Mod'],
+		banlist: ['Unreleased', 'Illegal', 'Ignore Illegal Abilities', 'Drizzle ++ Swift Swim', 'Soul Dew', 'Soul Dew', 'Drought ++ Chlorophyll', 'Sand Stream ++ Sand Rush' 'Wonder Guard',
+			'Mewtwo', 'Lugia', 'Ho-Oh', 'Blaziken', 'Kyogre', 'Groudon', 'Rayquaza', 'Deoxys', 'Deoxys-Attack', 'Deoxys-Defense', 'Deoxys-Speed', 'Dialga', 'Palkia', 'Giratina', 'Giratina-Origin', 'Manaphy', 'Darkrai', 'Shaymin-Sky',
+			'Arceus', 'Arceus-Bug', 'Arceus-Dark', 'Arceus-Dragon', 'Arceus-Electric', 'Arceus-Fighting', 'Arceus-Fire', 'Arceus-Flying', 'Arceus-Ghost', 'Arceus-Grass', 'Arceus-Ground', 'Arceus-Ice', 'Arceus-Poison', 'Arceus-Psychic', 'Arceus-Rock', 'Arceus-Steel', 'Arceus-Water',
+			'Excadrill', 'Tornadus-Therian', 'Thundurus', 'Reshiram', 'Zekrom', 'Landorus', 'Kyurem-White', 'Genesect', 'Slaking', 'Regigigas'
+		]
+	},
+	{
 		name: "Monotype (OU)",
 		section: "Other Metagames",
 
@@ -509,6 +526,7 @@ exports.Formats = [
 		ruleset: ['Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview'],
 		banlist: ['Moody', 'Wonder Guard', 'Palkia ++ Contrary', 'Terrakion ++ Shadow Tag', 'Kyurem-Black ++ Shadow Tag', 'Soul Dew']
 	},
+	
 
 	// Seasonals
 	///////////////////////////////////////////////////////////////////
@@ -1297,6 +1315,7 @@ exports.Formats = [
 	{
 		name: "[Gen 4] Hackmons",
 		section: "Past Generations",
+		searchShow: false,
 
 		mod: 'gen4',
 		searchShow: false,
@@ -1323,6 +1342,7 @@ exports.Formats = [
 	{
 		name: "[Gen 3] Hackmons",
 		section: "Past Generations",
+		searchShow: false,
 
 		mod: 'gen3',
 		searchShow: false,

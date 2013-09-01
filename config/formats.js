@@ -1138,6 +1138,7 @@ exports.Formats = [
 
 		team: 'randomSeasonalAA',
 		gameType: 'doubles',
+		searchShow: false,
 		ruleset: ['HP Percentage Mod', 'Sleep Clause Mod'],
 		onBegin: function() {
 			// What does player 1 lead with?

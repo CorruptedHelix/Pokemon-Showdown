@@ -427,6 +427,18 @@ exports.BattleFormats = {
 			}
 		}
 	},
+		metronomeclause: {
+		effectType: 'Rule',
+		onStart: function() {
+			this.add('rule', 'Metronome Clause: Only Metronome is allowed.');
+		},
+		validateSet: function(set) {
+			var template = this.getTemplate(set.moves);
+			if (set.moves !== 'Metronome') {
+				return [set.species+" is banned because it doesn't have Metronome."];
+			}
+		}
+	},
 	offstatpokemon: {
 		effectType: 'Banlist',
 		validateSet: function(set, format) {

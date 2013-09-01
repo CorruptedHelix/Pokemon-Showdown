@@ -159,6 +159,13 @@ exports.Formats = [
 		// no restrictions, for serious
 		ruleset: []
 	},
+	{
+		name: "Metronome",
+		section: "Singles",
+
+		searchShow: true,
+		ruleset: ['Pokemon', 'Evasion Abilities Clause', 'Team Preview', 'Metronome Clause']
+	},
 
 	// Other Metagames
 	///////////////////////////////////////////////////////////////////
